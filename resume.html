@@ -1,0 +1,174 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Resume - Dynamic</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container" id="resume"></div>
+
+  <script>
+    // Resume Data stored in JS object
+    const resumeData = {
+      name: "Krrish Nayak",
+      title: "Web Developer/ Analyst",
+      email: "nayakkrrish0806@gmail.com",
+      phone: "+91-8368525293",
+      linkedin: "https://www.linkedin.com/in/krrish-nayak-90a9702b0/",
+      github: "https://github.com/Krrish0806",
+      profile: "Detail-oriented web developer with an enthusiasm for building responsive and user-friendly websites. Proficient in HTML, CSS, JavaScript, and React.",
+      education: [
+        {
+          degree: "Bachelors of Technology in Computer Science",
+          institution: "SRM University",
+          duration: "2023 - 2027"
+
+          
+        }
+      ],
+      skills: ["C", "C++", "Python", "HTML", "CSS", "SQL", "Responsive Design"],
+      projects: [
+        {
+          title: "Portfolio Website",
+          description: "Developed a personal portfolio website using HTML, CSS, and JavaScript to showcase projects and skills."
+        }
+      ]
+    };
+
+    // Function to render resume dynamically
+    function renderResume(data) {
+      const resumeDiv = document.getElementById("resume");
+      resumeDiv.innerHTML = `
+        <header>
+          <h1>${data.name}</h1>
+          <p>${data.title}</p>
+          <p>Email: ${data.email} | Phone: ${data.phone}</p>
+          <a href="${data.linkedin}" target="_blank">LinkedIn Profile</a> |
+          <a href="${data.github}" target="_blank">GitHub Profile</a>
+        </header>
+
+        <section class="section">
+          <h2>Profile</h2>
+          <p>${data.profile}</p>
+        </section>
+
+        <section class="section">
+          <h2>Education</h2>
+          ${data.education.map(edu => `
+            <div class="item">
+              <h3>${edu.degree}</h3>
+              <p>${edu.institution}, ${edu.duration}</p>
+            </div>
+          `).join('')}
+        </section>
+
+        <section class="section">
+          <h2>Skills</h2>
+          <ul class="skills">
+            ${data.skills.map(skill => `<li>${skill}</li>`).join('')}
+          </ul>
+        </section>
+
+        <section class="section">
+          <h2>Projects</h2>
+          ${data.projects.map(project => `
+            <div class="item">
+              <h3>Cricket Score Predictor</h3>
+              <p>Built using Tkinter and
+Java Swing to simulate match score predictions based
+on user input and conditions.</p>
+<h4>Mail Merging Website</h4>
+<p>Designed frontend of the
+website along with the Logo using Canva.</p>
+<h5>Inflation Calculator<h5/>
+  <p>A basic Python application to
+estimate future prices using custom inflation
+parameters and user input.</p>
+<h6>Online Financial Analyst<h6/>
+  <p>A basic online financial analyst using HTML, CSS and Javascript(this was made in 24 hours in a hackathon).</p>
+
+            </div>
+          `).join('')}
+        </section>
+      `;
+    }
+    renderResume(resumeData);
+  </script>
+</body>
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Resume - Dynamic</title>
+  <link rel="stylesheet" href="resume.css" />
+  <style>
+    /* Quick inline styling for demo */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      background: #f9f9f9;
+      color: #333;
+    }
+    .container {
+      max-width: 800px;
+      margin: auto;
+      background: #fff;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+    header {
+      text-align: center;
+      border-bottom: 2px solid #eee;
+      padding-bottom: 15px;
+      margin-bottom: 20px;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2em;
+      color: #0073e6;
+    }
+    header p {
+      margin: 4px 0;
+    }
+    .section {
+      margin-bottom: 20px;
+    }
+    .section h2 {
+      border-left: 5px solid #0073e6;
+      padding-left: 10px;
+      margin-bottom: 10px;
+    }
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      list-style: none;
+      padding: 0;
+    }
+    .skills li {
+      background: #0073e6;
+      color: #fff;
+      padding: 6px 12px;
+      border-radius: 20px;
+      font-size: 0.9em;
+    }
+    .item {
+      margin-bottom: 10px;
+    }
+    .item h3 {
+      margin: 0;
+      color: #444;
+    }
+  </style>
+</head>
+<body>
+  <div class="container" id="resume"></div>
+
+  <script src="resume.js"></script>
+</body>
+</html>
